@@ -5,30 +5,26 @@ import {useState, useEffect} from "react"
 
 function App() {
   const[mapSchema, setMapSchema] = useState(0);
-  //const[reRender, setReRender] = useState(0);
+  const[reRender, setReRender] = useState(0);
 
 
-
+  useEffect(() => {
+    fetch("http://localhost:8080/api/maps")
+      .then(res => {
+        if (res.ok) {
+          return res.json(); 
+        } else {
+          throw new Error('Request failed with status: ' + res.status);
+        }
+      })
+      .then(data => {
+        setMapSchema(data);
+      })
+      .catch(error => console.error(error));
+  }, [reRender]);
 
   const generateMapButtonEvent = () =>{
-   // setReRender( reRender + 1);
-  
-    useEffect(() => {
-      fetch("http://localhost:8080/api/maps")
-        .then(res => {
-          if (res.ok) {
-            return res.json(); 
-          } else {
-            throw new Error('Request failed with status: ' + res.status);
-          }
-        })
-        .then(data => {
-          setMapSchema(data);
-        })
-        .catch(error => console.error(error));
-    }, []);
-
-   
+    setReRender( reRender + 1);
   }
 
 

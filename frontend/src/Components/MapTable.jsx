@@ -4,15 +4,20 @@ let mineral = ["../public/minereu1.png", "../public/minereu2.png"];
 let water = ["../public/Water.png"];
 let pit = ["../public/pit.png"];
 
-export default function MapTable({size, classNameTable, classNameTableBox, mapArray}){
-   let rows = [];
+export default function MapTable({ size, classNameTable, classNameTableBox, mapArray }) {
+    let rows = [];
 
-    for(let i = 0; i < size; i++){
-       rows.push(<tr key={`tableRow - ${i}`}>{createRow(size, classNameTableBox, i, mapArray)}</tr>)
+    for (let i = 0; i < size; i++) {
+        rows.push(<tr key={`tableRow - ${i}`}>{createRow(size, classNameTableBox, i, mapArray)}</tr>)
     }
 
    
-    return <table className={classNameTable}><tbody>{rows}</tbody></table>;
+    return (
+        < div className="tableHoldingDiv">
+        <table className={classNameTable}><tbody>{rows}</tbody></table >;
+        </div>
+    )
+        
 }
 
 

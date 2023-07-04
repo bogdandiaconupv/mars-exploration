@@ -33,6 +33,7 @@ function App() {
 
   return (
     <>
+    {!mapSchema && <div>SEEMS LIKE THERES NO MAP, START THE ENGINE!</div>}
    { mapSchema &&  <MapTable size={32} classNameTable={"mapTable"} classNameTableBox={"mapBox"} mapArray={mapSchema.representation}/>}
    <button onClick={generateMapButtonEvent} className='generateMapBtn'> Generate Map </button>
     </>

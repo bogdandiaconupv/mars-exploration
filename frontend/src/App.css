@@ -14,13 +14,13 @@
   width: fit-content;
   height: fit-content;
   transform: scale(0.7);
-  border: 10px solid;
+  border: 1.5vh solid rgba(97, 92, 92, 0.7);
   border-radius: 16px;
   position: absolute;
   display: flex;
   justify-content: center;
   /* align-items: center; */
-
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
   left: 0px;
 }
 
@@ -42,18 +42,46 @@
 }
 
 .mapBox {
-  width: 32px;
-  height: 32px;
+  width: calc(100vw/64);
+  height: calc(100vh/32);;
   background-size: cover;
   margin: 0px;
   padding: 0px;
   /* border: 0.5px solid green; */
 }
 
+
 .generateMapBtn {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: white;
-  color: black;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 10px;
+ font-family: inherit;
+ font-size: 13px;
+ font-weight: 500;
+ text-transform: uppercase;
+ letter-spacing: 0.4px;
+ color: #7e97b8;
+ background-color: #e0e8ef;
+ border-style: solid;
+ border-width: 2px 2px 2px 2px;
+ border-color: rgba(255, 255, 255, 0.333);
+ border-radius: 40px 40px 40px 40px;
+ padding: 16px 24px 16px 28px;
+ transform: translate(0px, 0px) rotate(0deg);
+ transition: 0.2s;
+ box-shadow: -4px -2px 16px 0px #ffffff, 4px 2px 16px 0px rgb(95 157 231 / 48%);
+     position: absolute;
+    left: 60%;
+    top: 30%;
+}
+
+.generateMapBtn:hover {
+ color: #516d91;
+ background-color: #E5EDF5;
+ box-shadow: -2px -1px 8px 0px #ffffff, 2px 1px 8px 0px rgb(95 157 231 / 48%);
+}
+
+.generateMapBtn:active {
+ box-shadow: none;
 }

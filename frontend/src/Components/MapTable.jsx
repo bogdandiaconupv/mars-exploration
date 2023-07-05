@@ -14,7 +14,7 @@ export default function MapTable({ size, classNameTable, classNameTableBox, mapA
    
     return (
         < div className="tableHoldingDiv">
-        <table className={classNameTable}><tbody>{rows}</tbody></table >;
+        <table className={classNameTable}><tbody>{rows}</tbody></table >
         </div>
     )
         
